@@ -1,0 +1,10 @@
+.img {
+    background: rgba(0, 0, 0, 0.70) url(../../../images/bg_3.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.text{
+    font-size: 35px;
+}
