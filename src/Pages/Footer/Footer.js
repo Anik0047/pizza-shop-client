@@ -91,6 +91,10 @@ const Footer = () => {
 
                 </div>
 
+                <div className='mt-20'>
+                    <h1>Copyright ©2023 All rights reserved</h1>
+                </div>
+
             </div>
         </div>
     );

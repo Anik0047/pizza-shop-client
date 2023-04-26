@@ -1,5 +1,6 @@
 import React from 'react';
 import './Banner.css';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -10,7 +11,7 @@ const Banner = () => {
                     <h2 className='py-5'>WE COOKED YOUR DESIRED</h2>
                     <h2 className='pb-7'>PIZZA RECIPE</h2>
                     <p className='text-lg pb-5'>A small river named Duden flows by their place and supplies it with the necessary regeilalia</p>
-                    <button className="btn btn-warning rounded-none btn-outline">View Menu</button>
+                    <button className="btn btn-warning rounded-none btn-outline"><Link to='/menu'>View Menu</Link></button>
                 </div>
             </div>
         </>
