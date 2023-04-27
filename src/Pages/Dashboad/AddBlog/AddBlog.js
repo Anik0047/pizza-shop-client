@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import './AddBlog.css'
 
 const AddBlog = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -51,30 +52,35 @@ const AddBlog = () => {
 
 
     return (
-        <>
-            <form className='flex flex-col w-2/5 mx-auto py-10' onSubmit={handleSubmit(handleaddBlog)}>
-                
-                <input
-                    {...register("name")}
-                    type="text" placeholder="Enter Title"
-                    className="input input-bordered w-full mb-5 " />
+        <div className='background-all-pizza flex justify-center items-center text-white'>
+            <div className='container mx-auto'>
+                <form className='flex flex-col w-2/5 mx-auto py-10' onSubmit={handleSubmit(handleaddBlog)}>
 
-                <input
-                    {...register("description")}
-                    type="text" placeholder="Enter your opinion"
-                    className="input input-bordered w-full mb-5 " />
+                    <label>Enter Title</label>
+                    <input
+                        {...register("name")}
+                        type="text" 
+                        className="input w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
+
+                    <label>Enter Your Opinion</label>
+                    <input
+                        {...register("description")}
+                        type="text" 
+                        className="input w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
 
 
-                <input
-                    {...register("image")}
-                    type="file"
-                    className="file-input w-full mb-5 border border-black" />
+                    <label>Enter pizza image</label>
+                    <input
+                        {...register("image")}
+                        type="file"
+                        className="file-input w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500 file" />
 
-                {errors.exampleRequired && <span>This field is required</span>}
+                    {errors.exampleRequired && <span>This field is required</span>}
 
-                <input className="btn btn-primary" type="submit" value="Add Blog" />
-            </form>
-        </>
+                    <input className="btn bg-transparent border border-orange-500 hover:bg-orange-500" type="submit" value="Add Blog" />
+                </form>
+            </div>
+        </div>
     );
 };
 

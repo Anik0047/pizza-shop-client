@@ -35,10 +35,10 @@ const AllPizza = () => {
 
     return (
         <div>
-            <div className='container mx-auto my-5'>
-                <h1 className='text-left text-3xl font-semibold my-5'>ALL PIZZA</h1>
-                <div className="overflow-x-auto">
-                    <table className="table w-full">
+            <div className='container mx-auto py-5'>
+                <h1 className='text-left text-3xl font-semibold py-10'>ALL PIZZA</h1>
+                <div className="overflow-x-auto pb-8 drop-shadow-2xl">
+                    <table className="table w-full ">
                         {/* head*/}
                         <thead>
                             <tr>
@@ -65,12 +65,6 @@ const AllPizza = () => {
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div>
-
-
-                <iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=hemsen%20lane%20Chittagong+(Pizza)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-
             </div>
         </div>
     );

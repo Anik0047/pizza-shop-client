@@ -1,0 +1,12 @@
+.background-add-pizza{
+    background: rgba(0, 0, 0, 0.70) url(../../../images/bg-pizza-1.jpg);
+        background-blend-mode: darken;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 100vh;
+}
+
+.file::file-selector-button{
+display: none;
+}

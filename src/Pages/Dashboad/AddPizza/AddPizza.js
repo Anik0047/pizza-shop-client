@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import './AddPizza.css';
 
 const AddPizza = () => {
 
@@ -51,34 +52,40 @@ const AddPizza = () => {
 
 
     return (
-        <>
-            <form className='flex flex-col w-2/5 mx-auto py-10' onSubmit={handleSubmit(handleAddPizza)}>
+        <div className='background-add-pizza flex justify-center items-center text-white'>
+            <div className='container mx-auto'>
+                <form className='flex flex-col w-2/5 mx-auto py-10' onSubmit={handleSubmit(handleAddPizza)}>
 
-                <input
-                    {...register("name")}
-                    type="text" placeholder="Enter pizza name"
-                    className="input input-bordered w-full mb-5 " />
+                    <label>Enter pizza name</label>
+                    <input
+                        {...register("name")}
+                        type="text" 
+                        className="input w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
 
-                <input
-                    {...register("description")}
-                    type="text" placeholder="Enter pizza description"
-                    className="input input-bordered w-full mb-5 " />
+                    <label>Enter pizza description</label>
+                    <input
+                        {...register("description")}
+                        type="text" 
+                        className="input  w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
 
-                <input
-                    {...register("price")}
-                    type="text" placeholder="Enter pizza price"
-                    className="input input-bordered w-full mb-5 " />
+                    <label>Enter pizza price</label>
+                    <input
+                        {...register("price")}
+                        type="text"
+                        className="input  w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
 
-                <input
-                    {...register("image")}
-                    type="file"
-                    className="file-input w-full mb-5 border border-black" />
+                    <label>Enter pizza image</label>
+                    <input
+                        {...register("image")}
+                        type="file"
+                        className="file-input w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500 file" />
 
-                {errors.exampleRequired && <span>This field is required</span>}
+                    {errors.exampleRequired && <span>This field is required</span>}
 
-                <input className="btn btn-primary" type="submit" value="Add Pizza" />
-            </form>
-        </>
+                    <input className="btn bg-transparent border border-orange-500 hover:bg-orange-500" type="submit" value="Add Pizza" />
+                </form>
+            </div>
+        </div>
     );
 };
 

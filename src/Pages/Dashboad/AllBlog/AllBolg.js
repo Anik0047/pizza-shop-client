@@ -37,7 +37,7 @@ const AllBolg = () => {
         <div>
             <div className='container mx-auto my-5'>
                 <h1 className='text-left text-3xl font-semibold my-5'>ALL blog</h1>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto pb-8 drop-shadow-2xl">
                     <table className="table w-full">
                         {/* head*/}
                         <thead>
