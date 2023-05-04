@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Content/AuthProvider';
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error))
+        navigate('/');
     }
 
     return (
@@ -24,26 +26,13 @@ const Header = () => {
                             <li><Link to='/menu'>Menu</Link></li>
                             <li><Link to='/services'>Services</Link></li>
                             <li><Link to='/blog'>Blog</Link></li>
-                            <li tabindex="0">
-                                <Link class="justify-between">
-                                    Add Pizza
-                                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                                </Link>
-                                <ul class="p-2 bg-black">
-                                    <li><Link to='/addPizza'>Add Pizza</Link></li>
-                                    <li><Link to='/allPizza'>All Pizza</Link></li>
-                                </ul>
-                            </li>
-                            <li tabindex="0">
-                                <Link class="justify-between">
-                                    Add Blog
-                                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                                </Link>
-                                <ul class="p-2 bg-black">
-                                    <li><Link to='/addBlog'>Add Blog</Link></li>
-                                    <li><Link to='/allBlog'>All Blog</Link></li>
-                                </ul>
-                            </li>
+                            <li><Link to='/addPizza'>Add Pizza</Link></li>
+                            <li><Link to='/allPizza'>All Pizza</Link></li>
+                            <li><Link to='/addBlog'>Add Blog</Link></li>
+                            <li><Link to='/allBlog'>All Blog</Link></li>
+                            <li><Link to='/alluser'>Users</Link></li>
+                            <li><Link to='/about'>About</Link></li>
+                            <li><Link to='/contact'>Contact</Link></li>
                             <li><Link to='/contact'>Contact</Link></li>
                             {
                                 user?.uid ?
@@ -58,31 +47,10 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/menu'>Menu</Link></li>
-                        <li><Link to='/services'>Services</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
-                        <li tabIndex={0}>
-                            <Link>
-                                Add Pizza
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                            </Link>
-                            <ul className="p-2 bg-black">
-                                <li><Link to='/addPizza'>Add Pizza</Link></li>
-                                <li><Link to='/allPizza'>All Pizza</Link></li>
-                            </ul>
-                        </li>
-                        <li tabIndex={0}>
-                            <Link>
-                                Add Blog
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                            </Link>
-                            <ul className="p-2 bg-black">
-                                <li><Link to='/addBlog'>Add Blog</Link></li>
-                                <li><Link to='/allBlog'>All Blog</Link></li>
-                            </ul>
-                        </li>
-
                         <li><Link to='/about'>About</Link></li>
                         <li><Link to='/contact'>Contact</Link></li>
+                        <li><Link to='/dashboard'>Dashboard</Link></li>
                         {
                             user?.uid ?
                                 <button onClick={handleLogOut} className="btn text-amber-500">Log Out</button> :

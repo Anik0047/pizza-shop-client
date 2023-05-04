@@ -12,7 +12,8 @@ const MenuCard = ({ pizza }) => {
             email: user.email,
             orderBy: user.displayName,
             pizzaName: name,
-            price: price
+            price: price,
+            image: image
         }
         fetch('http://localhost:5000/order', {
             method: 'POST',
