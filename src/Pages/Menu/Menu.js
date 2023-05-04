@@ -26,15 +26,17 @@ const Menu = () => {
             </div>
 
             <div className='pizzaBackground pt-28'>
-                <h1 className='text-white text-3xl font-semibold pb-10'>Our Menu</h1>
-                <p className='text-stone-500 pb-16 px-10'>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <div className='grid md:grid-cols-3'>
-                    {
-                        pizza.map(pizza => <MenuCard
-                            pizza={pizza}
-                            key={pizza._id}
-                        ></MenuCard>)
-                    }
+                <div className='container mx-auto'>
+                    <h1 className='text-white text-3xl font-semibold pb-10'>Our Menu</h1>
+                    <p className='text-stone-500 pb-16 px-10'>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <div className='grid md:grid-cols-2 gap-y-10'>
+                        {
+                            pizza.map(pizza => <MenuCard
+                                pizza={pizza}
+                                key={pizza._id}
+                            ></MenuCard>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>

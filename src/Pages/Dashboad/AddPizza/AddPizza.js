@@ -60,25 +60,25 @@ const AddPizza = () => {
                     <input
                         {...register("name")}
                         type="text" 
-                        className="input w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
+                        className="input w-full mb-5 bg-transparent border-x-2 border-b-4 border-orange-500" />
 
                     <label>Enter pizza description</label>
                     <input
                         {...register("description")}
                         type="text" 
-                        className="input  w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
+                        className="input  w-full mb-5 bg-transparent border-x-2 border-b-4 border-orange-500" />
 
                     <label>Enter pizza price</label>
                     <input
                         {...register("price")}
                         type="text"
-                        className="input  w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500" />
+                        className="input  w-full mb-5 bg-transparent border-x-2 border-b-4 border-orange-500" />
 
                     <label>Enter pizza image</label>
                     <input
                         {...register("image")}
                         type="file"
-                        className="file-input w-full mb-5 bg-transparent border-0 border-b-4 border-orange-500 file" />
+                        className="file-input w-full mb-5 bg-transparent border-x-2 border-b-4 border-orange-500 file" />
 
                     {errors.exampleRequired && <span>This field is required</span>}
 
