@@ -21,16 +21,17 @@ const MyOrders = () => {
     //Check
     return (
         <>
-            <h1 className='text-3xl p-8'>My Orders</h1>
-            <div className='grid gap-5 sm:grid-cols-1 md:grid-cols-2 px-5'>
+            <h1 className='text-3xl p-8'>MY ORDERS</h1>
+            <div className='grid gap-5 sm:grid-cols-1 md:grid-cols-2 sm: px-8 md:px-5'>
                 {
                     products?.map(product =>
                         <div key={product._id} className="card flex-col lg:flex-row card-side bg-base-100 shadow-xl my-10 border-2 border-gray-500">
                             <figure className='w-full lg:w-2/4'><img src={product.image} alt="Movie" /></figure>
                             <div className="card-body w-full lg:w-2/4">
-                                <h2 className="card-title text-2xl">{product.name}</h2>
+                                <h2 className="card-title text-2xl">{product.pizzaName}</h2>
+                                
                                 <hr />
-                                <p className='font-light mt-3'>Price: ৳{product.price}
+                                <p className='mt-3 text-left'>Price: $ {product.price}
                                     <br />
                                     <br />
                                 </p>

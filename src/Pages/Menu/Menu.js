@@ -25,7 +25,7 @@ const Menu = () => {
                 </div>
             </div>
 
-            <div className='pizzaBackground pt-28'>
+            <div className='pizzaBackground py-28'>
                 <div className='container mx-auto'>
                     <h1 className='text-white text-3xl font-semibold pb-10'>Our Menu</h1>
                     <p className='text-stone-500 pb-16 px-10'>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>

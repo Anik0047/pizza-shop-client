@@ -14,8 +14,9 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import Menu from "../Pages/Menu/Menu";
-import MenuCard from "../Pages/Menu/MenuCard";
 import ServicesPage from "../Pages/ServicesPage/ServicesPage";
+import AdminRoute from "./AdminRoute";
+import PrivateRoutes from "./PrivateRoutes";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -39,11 +40,7 @@ export const routes = createBrowserRouter([
 
             {
                 path: '/menu',
-                element: <Menu></Menu>
-            },
-            {
-                path: '/menucard',
-                element: <MenuCard></MenuCard>
+                element: <PrivateRoutes> <Menu></Menu></PrivateRoutes>
             },
             {
                 path: '/services',
@@ -69,15 +66,15 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/',
-                element: <MyOrders></MyOrders>
+                element: <PrivateRoutes><MyOrders></MyOrders></PrivateRoutes>
             },
             {
                 path: '/dashboard/allUser',
-                element: <AllUser></AllUser>
+                element: <AdminRoute><AllUser></AllUser></AdminRoute>
             },
             {
                 path: '/dashboard/allBlog',
-                element: <AllBolg></AllBolg>
+                element: <AdminRoute><AllBolg></AllBolg></AdminRoute>
             },
             {
                 path: '/dashboard/allPizza',
@@ -85,15 +82,15 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/dashboard/addBlog',
-                element: <AddBlog></AddBlog>
+                element: <AdminRoute><AddBlog></AddBlog></AdminRoute>
             },
             {
                 path: '/dashboard/addPizza',
-                element: <AddPizza></AddPizza>
+                element: <AdminRoute><AddPizza></AddPizza></AdminRoute>
             },
             {
                 path: '/dashboard/allorders',
-                element: <AllOrders></AllOrders>
+                element: <AdminRoute><AllOrders></AllOrders></AdminRoute>
             },
         ]
     }

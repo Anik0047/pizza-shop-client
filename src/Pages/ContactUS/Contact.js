@@ -56,10 +56,10 @@ const Contact = () => {
                                     <input {...register("firstName")} type="text" placeholder="First Name" className="input w-48 me-4 bg-inherit border-0  border-b-4 border-slate-600" />
                                 </div>
                                 <div>
-                                    <input {...register("lastName")} type="text" placeholder="Last Name" className="input w-48 me-4 bg-inherit border-0  border-b-4 border-slate-600" />
+                                    <input {...register("lastName")} type="text" placeholder="Last Name" className="input w-48 me-4 bg-inherit border-0  border-b-4 border-slate-600 my-6" />
                                 </div>
                                 <div>
-                                    <textarea {...register("message")} placeholder='message' className='w-full bg-inherit border-0 border-b-4 border-slate-600 rounded-md'>
+                                    <textarea {...register("message")} placeholder='    Message' className='w-full bg-inherit border-0 border-b-4 border-slate-600 rounded-md'>
                                     </textarea>
                                 </div>
                                 <input className="btn btn-warning rounded-none btn-outline grid justify-items-start mt-5 px-8" type="submit" value="Send Message" />

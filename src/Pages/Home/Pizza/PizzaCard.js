@@ -6,8 +6,8 @@ const PizzaCard = ({ pizza }) => {
     const { user } = useContext(AuthContext);
     console.log(user);
     const { name, description, image, price } = pizza;
-    
-    
+
+
     const orders = () => {
         const orderList = {
             email: user.email,
@@ -32,7 +32,7 @@ const PizzaCard = ({ pizza }) => {
                     showConfirmButton: false,
                     timer: 2000
                 }))
-        
+
     };
 
     return (
@@ -44,9 +44,19 @@ const PizzaCard = ({ pizza }) => {
             <div className='text-left px-5'>
                 <h1 className='text-xl font-semibold'>{name}</h1>
                 <h1 className='my-2 text-stone-500'>{description}</h1>
-                <h1>${price} <span className='ps-3'>
-                    <button onClick={() => orders()} className="btn btn-sm btn-warning rounded-none btn-outline ps-3">Order</button></span></h1>
+                
 
+                <div className='flex items-center'>
+                    <h1>${price}</h1>
+                    {
+                        user?.uid &&
+                        <span className='ps-3'>
+                            <button onClick={() => orders()} className="btn btn-sm btn-warning rounded-none btn-outline ps-3">Order</button></span>
+                    }
+                    
+                </div>
+
+                
             </div>
         </div>
     );

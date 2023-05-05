@@ -16,8 +16,8 @@ const Home = () => {
             <Time></Time>
             <Welcome></Welcome>
             <Services></Services>
-            <Pizza></Pizza>
             <Picture></Picture>
+            <Pizza></Pizza>
             <Count></Count>
             <Blog></Blog>
             <Map></Map>

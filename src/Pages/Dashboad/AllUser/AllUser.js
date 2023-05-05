@@ -16,8 +16,7 @@ const AllUser = () => {
 
     const handleMakeAdmin = id => {
         fetch(`http://localhost:5000/user/admin/${id}`, {
-            method: 'PUT',
-            headers: {}
+            method: 'PUT'
         })
             .then(res => res.json())
             .then(data => {
@@ -59,8 +58,8 @@ const AllUser = () => {
 
     return (
         <div>
-            <div className='container mx-auto py-5'>
-                <h1 className='text-left text-3xl font-semibold py-10'>ALL User</h1>
+            <div className='container mx-auto p-5'>
+                <h1 className='text-left text-3xl font-semibold py-10'>ALL USER</h1>
                 <div className="overflow-x-auto pb-8 drop-shadow-2xl">
                     <table className="table w-full ">
                         {/* head*/}

@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <>
-            <div className="navbar  bg-black text-white sticky top-0  z-10">
+            <div className="navbar  bg-black text-white sticky top-0  z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,6 +35,10 @@ const Header = () => {
                             <li><Link to='/contact'>Contact</Link></li>
                             <li><Link to='/contact'>Contact</Link></li>
                             {
+                                user?.uid &&
+                                <li><Link to='/dashboard'>Dashboard</Link></li>
+                            }
+                            {
                                 user?.uid ?
                                     <button onClick={handleLogOut} className="btn text-amber-500">Log Out</button> :
                                     <li li > <Link to='/login'>Login</Link></li>
@@ -50,7 +54,10 @@ const Header = () => {
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/about'>About</Link></li>
                         <li><Link to='/contact'>Contact</Link></li>
-                        <li><Link to='/dashboard'>Dashboard</Link></li>
+                        {
+                            user?.uid &&
+                            <li><Link to='/dashboard'>Dashboard</Link></li>
+                        }
                         {
                             user?.uid ?
                                 <button onClick={handleLogOut} className="btn text-amber-500">Log Out</button> :
