@@ -54,9 +54,9 @@ export const routes = createBrowserRouter([
             {
                 path: "/blog/:id",
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/blog/${params.id}`)
+                    return fetch(`https://server-dun-mu.vercel.app/blog/${params.id}`)
                 },
-                element: <BlogDetails></BlogDetails>
+                element: <PrivateRoutes><BlogDetails></BlogDetails></PrivateRoutes>
             },
             {
                 path: '/about',

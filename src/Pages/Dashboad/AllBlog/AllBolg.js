@@ -6,7 +6,7 @@ const AllBolg = () => {
     const { data: blog = [], refetch } = useQuery({
         queryKey: ['blog'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/blog');
+            const res = await fetch('https://server-dun-mu.vercel.app/blog');
             const data = await res.json();
             return data;
         }
@@ -14,7 +14,7 @@ const AllBolg = () => {
     
     const handleDetetingUser = blog => {
         console.log(blog);
-        fetch(`http://localhost:5000/blog/${blog._id}`, {
+        fetch(`https://server-dun-mu.vercel.app/blog/${blog._id}`, {
             method: 'DELETE',
             headers: {}
         })

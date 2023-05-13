@@ -14,7 +14,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className='bg-black py-20 text-white'>
-            <div className='container mx-auto'>
+            <div className='container mx-auto px-4'>
                 <div className='grid md:grid-cols-4 gap-x-2'>
                     <div className='text-left ps-3 md:ps-0'>
                         <h1 className='text-lg'>About Us</h1>
@@ -66,24 +66,24 @@ const Footer = () => {
 
                     <div className='pt-10 md:pt-0  ps-3 md:ps-0 text-left md:text-center'>
                         <h1 className='pb-8 text-lg'>HAVE A QUESTIONS?</h1>
-                        <div className='flex'>
+                        <div className='flex gap-8'>
                             <div className='pt-1'>
                                 <FaMapMarkerAlt></FaMapMarkerAlt>
                             </div>
-                            <div className='ps-8 md:ps-0'>
+                            <div className='text-left'>
                                 <h1>203 Fake St. Mountain View, San Francisco, California, USA</h1>
                             </div>
                         </div>
                         
-                        <div className='flex py-5'>
+                        <div className='flex py-5 gap-8'>
                             <div className='pt-1'><FaPhoneAlt></FaPhoneAlt></div>
-                            <div className='ps-7'>
+                            <div className=''>
                                 <h1>+2 392 3929 210</h1>
                             </div>
                         </div>
-                        <div className='flex'>
+                        <div className='flex gap-8'>
                             <div className='pt-1'><FaRegEnvelope></FaRegEnvelope></div>
-                            <div className='ps-7'>
+                            <div className=''>
                                 <h1>info@yourdomain.com</h1>
                             </div>
                         </div>

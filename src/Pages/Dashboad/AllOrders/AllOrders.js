@@ -7,7 +7,7 @@ const AllOrders = () => {
     const { data: order = [], refetch } = useQuery({
         queryKey: ['order'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/order');
+            const res = await fetch('https://server-dun-mu.vercel.app/order');
             const data = await res.json();
             return data;
         }
@@ -16,7 +16,7 @@ const AllOrders = () => {
 
     const handleDetetingUser = order => {
         console.log(order);
-        fetch(`http://localhost:5000/order/${order._id}`, {
+        fetch(`https://server-dun-mu.vercel.app/order/${order._id}`, {
             method: 'DELETE',
             headers: {}
         })

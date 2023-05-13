@@ -8,14 +8,14 @@ const AllUser = () => {
     const { data: user = [], refetch } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/user');
+            const res = await fetch('https://server-dun-mu.vercel.app/user');
             const data = await res.json();
             return data;
         }
     });
 
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/user/admin/${id}`, {
+        fetch(`https://server-dun-mu.vercel.app/user/admin/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -36,7 +36,7 @@ const AllUser = () => {
 
     const handleDetetingUser = user => {
         console.log(user);
-        fetch(`http://localhost:5000/user/${user._id}`, {
+        fetch(`https://server-dun-mu.vercel.app/user/${user._id}`, {
             method: 'DELETE',
             headers: {}
         })

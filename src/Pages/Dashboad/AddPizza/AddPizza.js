@@ -27,7 +27,7 @@ const AddPizza = () => {
                         price: data.price,
                         image: imgData.data.url
                     }
-                    fetch('http://localhost:5000/addPizza', {
+                    fetch('https://server-dun-mu.vercel.app/addPizza', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

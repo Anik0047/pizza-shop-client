@@ -29,7 +29,7 @@ const AddBlog = () => {
                         image: imgData.data.url,
                         date: date
                     }
-                    fetch('http://localhost:5000/addBlog', {
+                    fetch('https://server-dun-mu.vercel.app/addBlog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

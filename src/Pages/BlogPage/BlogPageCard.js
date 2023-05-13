@@ -7,7 +7,7 @@ const BlogPageCard = ({blog}) => {
 
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/comments')
+        fetch('https://server-dun-mu.vercel.app/comments')
             .then(res => res.json())
             .then(data => setComments(data));
     }, [])
@@ -18,7 +18,7 @@ const BlogPageCard = ({blog}) => {
     return (
         <div className='py-10 px-5'>
             <img className='' src={image} alt=''></img>
-            <p className='text-left px-5 md:px-0 py-5 text-stone-500 flex'>{date} <span className='flex'> <CiChat1 className='mt-1 ms-5 me-2'></CiChat1> {commentCount} </span></p>
+            <p className='text-left px-5 md:px-0 py-5 text-stone-500 flex'>{date} <span className='flex text-amber-500'> <CiChat1 className='mt-1 ms-5 me-2'></CiChat1> {commentCount} </span></p>
             <h1 className='text-left text-2xl font-semibold pb-5 px-5 md:px-0 text-white'>{name}</h1>
             <p className='text-start text-stone-500 px-5 md:px-0'>{description.slice(0, 200)}... <Link to={`/blog/${blog._id}`}><button className='text-amber-500'>Read more</button></Link></p>
         </div>

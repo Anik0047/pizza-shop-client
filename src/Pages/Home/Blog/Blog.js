@@ -8,7 +8,7 @@ const Blog = () => {
     const { data: blog = [], refetch } = useQuery({
         queryKey: ['blog'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/blog');
+            const res = await fetch('https://server-dun-mu.vercel.app/blog');
             const data = await res.json();
             return data.slice(0,3);
         }

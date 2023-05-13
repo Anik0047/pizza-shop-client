@@ -14,7 +14,7 @@ const Map = () => {
             lastName: data.lastName,
             message: data.message
         }
-        fetch('http://localhost:5000/contact', {
+        fetch('https://server-dun-mu.vercel.app/contact', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

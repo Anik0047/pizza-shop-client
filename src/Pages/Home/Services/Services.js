@@ -13,19 +13,19 @@ const Services = () => {
                     live the blind texts.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3">
                     <div className='items-center'>
-                        <img alt='' className='w-14 mx-auto mb-5' src={img1}></img>
+                        <img alt='' className='w-14 mx-auto mb-5 hover:scale-150 duration-200' src={img1}></img>
                         <h3 className="font-semibold mb-5">Healthy Foods</h3>
                         <p className='px-14'>Even the all-powerful Pointing has no control about the blind texts it is an almost
                             unorthographic.</p>
                     </div>
                     <div className='items-center py-8 md:py-0'>
-                        <img alt='' className='w-14 mx-auto mb-5' src={img2}></img>
+                        <img alt='' className='w-14 mx-auto mb-5 hover:scale-150 duration-200' src={img2}></img>
                         <h3 className="font-semibold mb-5">Fastest Delivery</h3>
                         <p className='px-14'>Even the all-powerful Pointing has no control about the blind texts it is an almost
                             unorthographic.</p>
                     </div>
                     <div className='items-center'>
-                        <img alt='' className='w-14 mx-auto mb-5' src={img3}></img>
+                        <img alt='' className='w-14 mx-auto mb-5 hover:scale-150 duration-200' src={img3}></img>
                         <h3 className="font-semibold mb-5">Original Recipes</h3>
                         <p className='px-14'>Even the all-powerful Pointing has no control about the blind texts it is an almost
                             unorthographic.</p>

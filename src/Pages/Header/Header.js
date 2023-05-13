@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Content/AuthProvider';
+import { IoPizzaOutline } from "react-icons/io5";
 
 const Header = () => {
 
@@ -45,9 +46,9 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                    <Link to="/" className="btn btn-ghost normal-case text-xl">Pizza Delicous</Link>
+                    <Link to="/" className="btn btn-ghost normal-case text-2xl text-amber-500"><IoPizzaOutline className='me-1'></IoPizzaOutline>Pizza Delicous</Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/menu'>Menu</Link></li>

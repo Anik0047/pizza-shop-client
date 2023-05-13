@@ -9,7 +9,7 @@ const MyComments = () => {
     const { data: comments = [], refetch } = useQuery({
         queryKey: ['comments'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/mycomments?email=${user?.email}`, {
+            const res = await fetch(`https://server-dun-mu.vercel.app/mycomments?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -20,7 +20,7 @@ const MyComments = () => {
     });
 
     const handleDetetingcomment = comment => {
-        fetch(`http://localhost:5000/mycomments/${comment._id}`, {
+        fetch(`https://server-dun-mu.vercel.app/mycomments/${comment._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

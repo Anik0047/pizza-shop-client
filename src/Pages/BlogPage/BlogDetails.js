@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { CiChat1 } from "react-icons/ci";
 import { AuthContext } from '../../Content/AuthProvider';
 import Swal from 'sweetalert2';
@@ -10,9 +10,11 @@ const BlogDetails = () => {
         window.scrollTo(0, 0)
     }, [])
 
+
     const formBlogs = useLoaderData();
     const blog = (formBlogs[0]);
     console.log(blog);
+    const navigate = useNavigate();
     
     const { user } = useContext(AuthContext);
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -21,7 +23,7 @@ const BlogDetails = () => {
 
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/comments')
+        fetch('https://server-dun-mu.vercel.app/comments')
             .then(res => res.json())
             .then(data => setComments(data));
     }, [])
@@ -37,7 +39,7 @@ const BlogDetails = () => {
             postedMonth: months[new Date().getMonth()],
             postedYear: new Date().getFullYear()
         }
-        fetch('http://localhost:5000/comments', {
+        fetch('https://server-dun-mu.vercel.app/comments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,7 +59,8 @@ const BlogDetails = () => {
                     e.target.reset();
                 }
             })
-        e.preventDefault();
+            navigate('/blog');
+            e.preventDefault();
 
     }
     return (
@@ -97,7 +100,7 @@ const BlogDetails = () => {
                 <h5>Your email address will not be published. Required fields are marked *</h5>
                 <h5>Comment *</h5>
                 <form onSubmit={handleCommentPost}>
-                    <textarea className='bg border border-amber-500 my-5 w-3/4 h-28' name="comment" ref={comment} id="comment" ></textarea> <br />
+                    <textarea className='bg border border-amber-500 my-5 w-3/4 h-28 p-2' name="comment" ref={comment} id="comment" ></textarea> <br />
                     <button type="submit" className='btn btn-warning rounded-none btn-outline mt-4'>Post Comment</button>
                 </form>
             </div>

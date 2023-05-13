@@ -15,7 +15,7 @@ const MenuCard = ({ pizza }) => {
             price: price,
             image: image
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://server-dun-mu.vercel.app/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -8,7 +8,7 @@ const Pizza = () => {
     const { data: pizza = [], refetch } = useQuery({
         queryKey: ['pizza'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/pizza');
+            const res = await fetch('https://server-dun-mu.vercel.app/pizza');
             const data = await res.json();
             return data;
         }
