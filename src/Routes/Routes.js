@@ -1,6 +1,7 @@
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Main from "../Layouts/Main";
 import About from "../Pages/About/About";
+import BlogDetails from "../Pages/BlogPage/BlogDetails";
 import BlogPage from "../Pages/BlogPage/BlogPage";
 import Contact from "../Pages/ContactUS/Contact";
 import AddBlog from "../Pages/Dashboad/AddBlog/AddBlog";
@@ -49,6 +50,13 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <BlogPage></BlogPage>
+            },
+            {
+                path: "/blog/:id",
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/blog/${params.id}`)
+                },
+                element: <BlogDetails></BlogDetails>
             },
             {
                 path: '/about',

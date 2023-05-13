@@ -10,7 +10,7 @@ const Blog = () => {
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/blog');
             const data = await res.json();
-            return data;
+            return data.slice(0,3);
         }
     });
 
@@ -22,6 +22,7 @@ const Blog = () => {
                 <p className='text-stone-500 pb-16 px-10'>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 <div className='grid md:grid-cols-3 gap-8'>
                     {
+                        
                         blog.map(blog => <BlogCard
                             blog={blog}
                             key={blog._id}
